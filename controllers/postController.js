@@ -17,7 +17,7 @@ const imagePost = (req, res) => {
         return res.status(500).json({ success: false, error: "No files uploaded" });
     }
 
-    const imageUrls = req.files.map(file => `http://localhost:${process.env.PORT}/images/${file.filename}`);
+    const imageUrls = req.files.map(file => `https://e-comserver-udnf.onrender.com/images/${file.filename}`);
     res.status(200).json({
         success: true,
         imageUrls,
