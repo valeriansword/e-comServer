@@ -11,8 +11,9 @@ const productRouter=require("./routes/productRoute.js")
 const app=express();
 const userRouter=require("./routes/userRoute.js");
 app.use(express.json())
-app.use(cors())
-
+app.use(cors({
+    origin:["https://e-comclient.onrender.com","http://localhost:5173"]
+}));
 dotenv.config()
 app.use("/images", express.static(path.join(__dirname, "upload", "images")));
 app.use("/upload",postRouter)
